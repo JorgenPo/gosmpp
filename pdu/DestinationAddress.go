@@ -3,7 +3,7 @@ package pdu
 import (
 	"fmt"
 
-	"github.com/linxGnu/gosmpp/data"
+	"github.com/JorgenPo/gosmpp/data"
 )
 
 // DestinationAddress represents Address or Distribution List based on destination flag.

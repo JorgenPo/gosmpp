@@ -1,7 +1,7 @@
 package pdu
 
 import (
-	"github.com/linxGnu/gosmpp/data"
+	"github.com/JorgenPo/gosmpp/data"
 )
 
 // Unbind PDU is to deregister an instance of an ESME from the SMSC and inform the SMSC

@@ -1,7 +1,7 @@
 package pdu
 
 import (
-	"github.com/linxGnu/gosmpp/data"
+	"github.com/JorgenPo/gosmpp/data"
 )
 
 // Outbind PDU is used by the SMSC to signal an ESME to originate a bind_receiver request to the SMSC.

@@ -1,4 +1,4 @@
-module github.com/linxGnu/gosmpp
+module github.com/JorgenPo/gosmpp
 
 require (
 	github.com/stretchr/testify v1.7.0

@@ -1,7 +1,7 @@
 package pdu
 
 import (
-	"github.com/linxGnu/gosmpp/data"
+	"github.com/JorgenPo/gosmpp/data"
 )
 
 // AlertNotification PDU is sent by the SMSC to the ESME, when the SMSC has detected that

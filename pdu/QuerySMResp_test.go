@@ -3,7 +3,7 @@ package pdu
 import (
 	"testing"
 
-	"github.com/linxGnu/gosmpp/data"
+	"github.com/JorgenPo/gosmpp/data"
 
 	"github.com/stretchr/testify/require"
 )
