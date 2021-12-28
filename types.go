@@ -13,3 +13,6 @@ type ErrorCallback func(error)
 
 // ClosedCallback notifies closed event due to State.
 type ClosedCallback func(State)
+
+// ShouldRespondFunc returns true if the given pdu should be responded automatically
+type ShouldRespondFunc func(pdu pdu.PDU) bool

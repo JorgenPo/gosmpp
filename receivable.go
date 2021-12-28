@@ -106,15 +106,20 @@ func (t *receivable) loop() {
 }
 
 func (t *receivable) handleOrClose(p pdu.PDU) (closing bool) {
+	// settings.ShouldRespond is a user set function that returns true if the pdu should be responded
+	// automatically
+	shouldRespondOnPdu := t.settings.ShouldRespond == nil || t.settings.ShouldRespond(p)
+	shouldRespondOnPdu = shouldRespondOnPdu && t.settings.response != nil
+
 	if p != nil {
 		switch pp := p.(type) {
 		case *pdu.EnquireLink:
-			if t.settings.response != nil {
+			if shouldRespondOnPdu {
 				t.settings.response(pp.GetResponse())
 			}
 
 		case *pdu.Unbind:
-			if t.settings.response != nil {
+			if shouldRespondOnPdu {
 				t.settings.response(pp.GetResponse())
 
 				// wait to send response before closing
@@ -126,7 +131,7 @@ func (t *receivable) handleOrClose(p pdu.PDU) (closing bool) {
 
 		default:
 			var responded bool
-			if p.CanResponse() && t.settings.response != nil {
+			if shouldRespondOnPdu {
 				t.settings.response(p.GetResponse())
 				responded = true
 			}
