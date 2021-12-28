@@ -43,6 +43,7 @@ func newTransceivable(conn *Connection, settings Settings) *transceivable {
 				}
 			}
 		},
+		ShouldRespond: settings.ShouldRespond,
 	})
 
 	t.in = newReceivable(conn, Settings{
